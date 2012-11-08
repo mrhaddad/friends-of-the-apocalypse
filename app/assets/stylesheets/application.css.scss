@@ -12,6 +12,12 @@
  *= require_tree .
  */
 
+p.help {
+  font-style: italic;
+  font-weight: bold;
+  text-align: center;
+}
+
 ul.statuses {
   list-style-type: none;
   margin: 0 0 20px 0;
