@@ -1,7 +1,7 @@
 class Status < ActiveRecord::Base
   include ESpeak
 
-  attr_accessible :message
+  attr_accessible :message, :username
 
   validates :message, presence: true
 
@@ -11,5 +11,6 @@ class Status < ActiveRecord::Base
 
   def write_mp3
     espeak("#{id}.mp3", text: message)
+    rescue
   end
 end

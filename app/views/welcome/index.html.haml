@@ -1,0 +1,7 @@
+%ul.statuses
+  - @statuses.each do |status|
+    %li[status]
+      = link_to image_tag("https://graph.facebook.com/#{status.username}/picture"), "http://www.facebook.com/#{status.username}"
+      %div
+        %p= status.message
+        = link_to status.username, "http://www.facebook.com/#{status.username}"

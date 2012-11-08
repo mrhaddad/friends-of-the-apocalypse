@@ -11,3 +11,32 @@
  *= require_self
  *= require_tree .
  */
+
+ul.statuses {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    overflow: hidden;
+
+    > a {
+      float: left;
+      width: 50px;
+      margin-right: 10px;
+      > img {
+        border: 1px solid #111111;
+      }
+    }
+
+    > div {
+      float: left;
+      width: 90%;
+
+      > a {
+        display: block;
+        text-align: right;
+      }
+    }
+  }
+}
