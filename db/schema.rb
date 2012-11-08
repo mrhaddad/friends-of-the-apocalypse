@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121108195132) do
+ActiveRecord::Schema.define(:version => 20121108210722) do
 
   create_table "statuses", :force => true do |t|
     t.text     "message"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(:version => 20121108195132) do
     t.datetime "updated_at", :null => false
     t.string   "username"
     t.string   "audio"
+    t.string   "gender"
   end
 
 end

@@ -10,3 +10,5 @@ $ ->
 
   $("ul.statuses > li").mouseleave ->
     $("#jp").jPlayer("stop").jPlayer("destroy")
+
+  $("ul.status > li:first").mouseenter()

@@ -1,0 +1,7 @@
+= simple_form_for @status, html: {class: "form-horizontal"} do |f|
+  = f.input :username
+  = f.input :message
+  = f.input :gender, collection: ["male", "female"], include_blank: false
+  .form-actions
+    = f.submit "Create Status", class: "btn btn-primary"
+

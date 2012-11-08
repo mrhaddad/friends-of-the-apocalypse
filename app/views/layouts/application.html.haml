@@ -16,13 +16,14 @@
     %link(href="images/apple-touch-icon.png" rel="apple-touch-icon-precomposed")
     %link(href="images/favicon.ico" rel="shortcut icon")
 
-
   %body
     .navbar.navbar-fixed-top
       .navbar-inner
         .container-fluid
           %a.brand(href="#{root_url}") Friends of the Apocalypse
-
+          .container.nav-collapse
+            %ul.nav
+              %li= link_to "Add status", new_status_path
     .container-fluid
 
       .row-fluid
