@@ -12,6 +12,7 @@ class Status < ActiveRecord::Base
 
   def write_mp3
     voice = ["en", "en-us", "en-sc", "en-n", "en-rp", "en-wm"].sample
+    voice = "en-sc"
     variant = ["m1","m2","m3","m4","m5","m6","m7", "f1", "f2", "f3", "f4", "f5"].sample
     espeak("tmp/#{id}.mp3", text: message, voice: "#{voice}+#{variant}") rescue nil
     self.audio = File.open("tmp/#{id}.mp3") if File.exists?("tmp/#{id}.mp3")
