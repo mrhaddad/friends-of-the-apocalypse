@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'carrierwave'
 gem 'rvm-capistrano'
 gem 'espeak-ruby'
 gem 'haml-rails'
