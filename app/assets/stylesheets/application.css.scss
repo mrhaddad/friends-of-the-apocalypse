@@ -14,11 +14,17 @@
 
 ul.statuses {
   list-style-type: none;
-  margin: 0;
+  margin: 0 0 20px 0;
   padding: 0;
 
   li {
     overflow: hidden;
+    padding: 10px;
+
+    &:hover {
+      background: #add8e6;
+      cursor: pointer;
+    }
 
     > a {
       float: left;
@@ -39,4 +45,10 @@ ul.statuses {
       }
     }
   }
+}
+
+footer {
+  border-top: 1px solid black;
+  padding-top: 10px;
+  text-align: right;
 }

@@ -31,6 +31,9 @@ namespace :deploy do
   task :restart, :roles => :app, :except => {:no_release => true} do
     run "cd /home/#{user}/#{application}/current && bundle exec thin restart -d -C /home/#{user}/thin/#{application}.yml"
   end
+  task :symlink_uploads do
+    run "ln -nfs #{shared_path}/uploads  #{release_path}/public/uploads"
+  end
 end
 
 desc "Dumps target database into development db"
@@ -44,3 +47,4 @@ end
 
 
 after "deploy:restart", "deploy:cleanup"
+after 'deploy:update_code', 'deploy:symlink_uploads'
