@@ -1,5 +1,11 @@
 %p.help An application that speaks your friends' apocalyptic anti-Obama Facebook updates with a Scottish accent.
 
+%div.images
+  %ul.images
+    %li= image_tag "obama.jpg"
+    %li= image_tag "scotland.jpg"
+    %li= image_tag "apocalypse.jpg"
+
 %ul.statuses
   - @statuses.each do |status|
     %li{"data-audio-path" => status.audio.url}
