@@ -12,3 +12,10 @@ $ ->
     $("#jp").jPlayer("stop").jPlayer("destroy")
 
   $("ul.status > li:first").mouseenter()
+
+  $("#jp2").jPlayer
+    swfPath: "/swfs",
+    supplied: "mp3",
+    solution: "flash,html",
+    ready: () ->
+      $(this).jPlayer("setMedia", {mp3: "/assets/scotland.mp3"}).jPlayer("play")
