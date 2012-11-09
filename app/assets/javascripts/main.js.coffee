@@ -1,3 +1,16 @@
+i = 0
+
+playNextBagpipesSelection = () ->
+  samples = ["scotland.mp3", "amazing_grace.mp3", "rowan_tree.mp3"]
+  i = 0 if i > samples.length - 1
+  $("#jp2").jPlayer
+    swfPath: "/swfs",
+    supplied: "mp3",
+    solution: "flash,html",
+    volume: "0.2",
+    ready: () ->
+      $(this).jPlayer("setMedia", {mp3: "/assets/" + samples[i]}).jPlayer("play")
+
 $ ->
   readStatus = (li) ->
     li.addClass("active")
@@ -17,21 +30,16 @@ $ ->
 
   setTimeout ->
     readStatus($("ul.statuses > li:first"))
-  , 4250
-
-  playNextBagpipesSelection = () ->
-    $("#jp2").jPlayer
-      swfPath: "/swfs",
-      supplied: "mp3",
-      solution: "flash,html",
-      volume: "0.2",
-      ready: () ->
-        $(this).jPlayer("setMedia", {mp3: "/assets/scotland.mp3"}).jPlayer("play")
+  , 4050
 
   $("#jp").bind $.jPlayer.event.ended, () ->
     $("ul.statuses > li").removeClass("active")
 
   $("#jp2").bind $.jPlayer.event.ended, () ->
-    playNextBagpipesSelection()
+    i++
+    setTimeout ->
+      $("#jp2").jPlayer("stop").jPlayer("destroy")
+      playNextBagpipesSelection()
+    , 1000
 
   playNextBagpipesSelection()
