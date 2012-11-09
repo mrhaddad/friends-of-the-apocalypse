@@ -13,6 +13,7 @@ playNextBagpipesSelection = () ->
 
 $ ->
   readStatus = (li) ->
+    $("ul.statuses > li").removeClass("active")
     li.addClass("active")
     $("#jp").jPlayer
       swfPath: "/swfs",
@@ -21,11 +22,11 @@ $ ->
       ready: () ->
         $(this).jPlayer("setMedia", {mp3: li.data("audio-path")}).jPlayer("play")
 
-  $("ul.statuses > li").mouseenter (event) ->
+  $("ul.statuses > li").mouseover (event) ->
     clearTimeout(initialRead)
     readStatus($(this))
 
-  $("ul.statuses > li").mouseleave (event) ->
+  $("ul.statuses > li").mouseout (event) ->
     $(this).removeClass("active")
     $("#jp").jPlayer("stop").jPlayer("destroy")
 

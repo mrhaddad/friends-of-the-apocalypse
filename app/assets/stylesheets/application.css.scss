@@ -59,7 +59,7 @@ ul.statuses {
     overflow: hidden;
     padding: 10px;
 
-    &:hover, &.active {
+    &.active {
       background: #add8e6;
       cursor: pointer;
     }
