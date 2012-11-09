@@ -10,6 +10,8 @@ class Status < ActiveRecord::Base
 
   after_create :write_mp3
 
+  scope :visible, where("hidden != true")
+
   def male?
     gender == "male"
   end
