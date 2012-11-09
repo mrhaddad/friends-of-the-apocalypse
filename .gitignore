@@ -17,3 +17,4 @@
 .idea
 spec/fixtures/*.yml
 .DS_Store
+public/assets
