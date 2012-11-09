@@ -44,6 +44,17 @@ ul.images {
   }
 }
 
+div.share {
+  text-align: center;
+  margin-bottom: 10px;
+
+  div.fb-like {
+    margin-right: 15px;
+    position: relative;
+    top: -3px;
+  }
+}
+
 p.help-block {
   span {
     font-weight: bold;
