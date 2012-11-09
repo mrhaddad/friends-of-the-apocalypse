@@ -22,13 +22,14 @@ $ ->
         $(this).jPlayer("setMedia", {mp3: li.data("audio-path")}).jPlayer("play")
 
   $("ul.statuses > li").mouseenter (event) ->
+    clearTimeout(initialRead)
     readStatus($(this))
 
   $("ul.statuses > li").mouseleave (event) ->
     $(this).removeClass("active")
     $("#jp").jPlayer("stop").jPlayer("destroy")
 
-  setTimeout ->
+  initialRead = setTimeout ->
     readStatus($("ul.statuses > li:first"))
   , 4050
 
@@ -37,6 +38,7 @@ $ ->
     $("ul.statuses > li").removeClass("active")
     if next.length
       setTimeout ->
+        $("#jp").jPlayer("stop").jPlayer("destroy")
         readStatus(next)
       , 1000
 
