@@ -44,6 +44,12 @@ ul.images {
   }
 }
 
+p.help-block {
+  span {
+    font-weight: bold;
+  }
+}
+
 ul.statuses {
   list-style-type: none;
   margin: 0 0 20px 0;
@@ -53,7 +59,7 @@ ul.statuses {
     overflow: hidden;
     padding: 10px;
 
-    &:hover {
+    &:hover, &.active {
       background: #add8e6;
       cursor: pointer;
     }

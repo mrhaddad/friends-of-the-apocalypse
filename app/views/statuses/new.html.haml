@@ -1,5 +1,5 @@
 = simple_form_for @status, html: {class: "form-horizontal"} do |f|
-  = f.input :username, label: "Facebook username"
+  = f.input :username, label: "Facebook username", hint: ("hint: it's the <span>zuck</span> in www.facebook.com/zuck".html_safe)
   = f.input :message
   = f.input :gender, collection: ["male", "female"], include_blank: false
   .form-actions
