@@ -17,5 +17,6 @@ $ ->
     swfPath: "/swfs",
     supplied: "mp3",
     solution: "flash,html",
+    volume: "0.2",
     ready: () ->
       $(this).jPlayer("setMedia", {mp3: "/assets/scotland.mp3"}).jPlayer("play")
