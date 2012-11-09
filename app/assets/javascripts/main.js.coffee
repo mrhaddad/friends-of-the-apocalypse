@@ -33,7 +33,12 @@ $ ->
   , 4050
 
   $("#jp").bind $.jPlayer.event.ended, () ->
+    next = $("li.active").next("li")
     $("ul.statuses > li").removeClass("active")
+    if next.length
+      setTimeout ->
+        readStatus(next)
+      , 1000
 
   $("#jp2").bind $.jPlayer.event.ended, () ->
     i++
