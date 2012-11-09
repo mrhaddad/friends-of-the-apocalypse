@@ -17,7 +17,7 @@ $ ->
 
   setTimeout ->
     readStatus($("ul.statuses > li:first"))
-  , 4500
+  , 4250
 
   playNextBagpipesSelection = () ->
     $("#jp2").jPlayer
