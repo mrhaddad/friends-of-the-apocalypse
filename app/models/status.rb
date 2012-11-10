@@ -8,6 +8,7 @@ class Status < ActiveRecord::Base
   validates :gender, presence: true, inclusion: %w{male female}
   validates :username, presence: true
 
+  before_create :set_facebook_exists
   after_create :write_mp3
 
   scope :visible, where("hidden != true")
@@ -17,6 +18,12 @@ class Status < ActiveRecord::Base
   end
 
   private
+
+  def set_facebook_exists
+    response = Nestful.get("https://graph.facebook.com/#{username}", format: :json) rescue nil
+    self.facebook_exists = response.present?
+    true
+  end
 
   def write_mp3
     variant = male? ? ["m1","m2","m3","m4","m5","m6","m7"].sample :  ["f1", "f2", "f3", "f4", "f5"].sample

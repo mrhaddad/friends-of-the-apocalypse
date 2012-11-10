@@ -11,16 +11,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121109234139) do
+ActiveRecord::Schema.define(:version => 20121110170037) do
 
   create_table "statuses", :force => true do |t|
     t.text     "message"
-    t.datetime "created_at",                    :null => false
-    t.datetime "updated_at",                    :null => false
+    t.datetime "created_at",                         :null => false
+    t.datetime "updated_at",                         :null => false
     t.string   "username"
     t.string   "audio"
     t.string   "gender"
-    t.boolean  "hidden",     :default => false
+    t.boolean  "hidden",          :default => false
+    t.boolean  "facebook_exists", :default => true
   end
 
 end

@@ -10,6 +10,7 @@ gem 'simple_form'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
+gem 'nestful'
 gem 'pg'
 gem 'thin-rails'
 gem 'twitter-bootstrap-rails'
